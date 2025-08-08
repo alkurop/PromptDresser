@@ -25,9 +25,9 @@ class Parsing:
             }),
             'CPUExecutionProvider',
         ]
-        self.session = ort.InferenceSession(os.path.join(Path(__file__).absolute().parents[2].absolute(), 'checkpoints/humanparsing/parsing_atr.onnx'),
+        self.session = ort.InferenceSession(os.path.join(Path(__file__).absolute().parents[2].absolute(), '/content/checkpoints/humanparsing/parsing_atr.onnx'),
                                             sess_options=session_options, providers=providers)
-        self.lip_session = ort.InferenceSession(os.path.join(Path(__file__).absolute().parents[2].absolute(), 'checkpoints/humanparsing/parsing_lip.onnx'),
+        self.lip_session = ort.InferenceSession(os.path.join(Path(__file__).absolute().parents[2].absolute(), '/content/checkpoints/humanparsing/parsing_lip.onnx'),
                                                 sess_options=session_options, providers=providers)
         #### jho modified <<<<
         # session_options.add_session_config_entry('gpu_id', str(gpu_id))
