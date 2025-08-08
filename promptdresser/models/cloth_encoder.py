@@ -38,13 +38,14 @@ from diffusers.models.embeddings import (
     ImageHintTimeEmbedding,
     ImageProjection,
     ImageTimeEmbedding,
-    PositionNet,
     TextImageProjection,
     TextImageTimeEmbedding,
     TextTimeEmbedding,
     TimestepEmbedding,
     Timesteps,
 )
+from promptdresser.models.position_net import PositionNet
+
 from diffusers.models.modeling_utils import ModelMixin
 from diffusers.models.unet_2d_blocks import (
     UNetMidBlock2D,
