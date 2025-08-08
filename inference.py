@@ -78,11 +78,11 @@ noise_scheduler = DDPMScheduler.from_pretrained(
     rescale_betas_zero_snr=not args.no_zero_snr, 
     timestep_spacing=args.timestep_spacing
 )
-tokenizer = CLIPTokenizer.from_pretrained(args.init_model_path, subfolder="tokenizer", torch_dtype=torch.float16,   variant="fp16" )
-text_encoder = CLIPTextModel.from_pretrained(args.init_model_path, subfolder="text_encoder", torch_dtype=torch.float16,   variant="fp16" )
-tokenizer_2 = CLIPTokenizer.from_pretrained(args.init_model_path, subfolder="tokenizer_2", torch_dtype=torch.float16,   variant="fp16" )
+tokenizer = CLIPTokenizer.from_pretrained(args.init_model_path, subfolder="tokenizer" )
+text_encoder = CLIPTextModel.from_pretrained(args.init_model_path, subfolder="text_encoder" )
+tokenizer_2 = CLIPTokenizer.from_pretrained(args.init_model_path, subfolder="tokenizer_2")
 text_encoder_2 = CLIPTextModelWithProjection.from_pretrained(args.init_model_path, subfolder="text_encoder_2", torch_dtype=torch.float16,   variant="fp16" )
-vae = AutoencoderKL.from_pretrained(args.init_vae_path, torch_dtype=torch.float16,   variant="fp16" )
+vae = AutoencoderKL.from_pretrained(args.init_vae_path)
 unet = UNet2DConditionModel.from_pretrained(args.init_model_path, subfolder="unet", torch_dtype=torch.float16,   variant="fp16" )
 cloth_encoder = ClothEncoder.from_pretrained(args.init_cloth_encoder_path, subfolder="unet", torch_dtype=torch.float16,   variant="fp16" )
 
