@@ -1,6 +1,6 @@
 #!/bin/bash
 pip install torch==2.1.0 torchvision==0.16.0 torchaudio==2.1.0 --index-url https://download.pytorch.org/whl/cu121
-python -m pip install diffusers==0.25.0
+python -m pip install diffusers==0.34.0
 python -m pip install accelerate==0.31.0
 python -m pip install "transformers>=4.25.1"
 python -m pip install ftfy
