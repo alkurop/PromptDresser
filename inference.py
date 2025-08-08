@@ -81,7 +81,7 @@ noise_scheduler = DDPMScheduler.from_pretrained(
 tokenizer = CLIPTokenizer.from_pretrained(args.init_model_path, subfolder="tokenizer" )
 text_encoder = CLIPTextModel.from_pretrained(args.init_model_path, subfolder="text_encoder" )
 tokenizer_2 = CLIPTokenizer.from_pretrained(args.init_model_path, subfolder="tokenizer_2")
-text_encoder_2 = CLIPTextModelWithProjection.from_pretrained(args.init_model_path, subfolder="text_encoder_2", torch_dtype=torch.float16,   variant="fp16" )
+text_encoder_2 = CLIPTextModelWithProjection.from_pretrained(args.init_model_path, subfolder="text_encoder_2")
 vae = AutoencoderKL.from_pretrained(args.init_vae_path)
 unet = UNet2DConditionModel.from_pretrained(args.init_model_path, subfolder="unet", torch_dtype=torch.float16,   variant="fp16" )
 cloth_encoder = ClothEncoder.from_pretrained(args.init_cloth_encoder_path, subfolder="unet", torch_dtype=torch.float16,   variant="fp16" )
